@@ -1,0 +1,50 @@
+#header {
+   margin: 20px;
+   font-size: 25px;
+   font-weight: bold;
+   font-family: 'Poiret One', sans-serif;
+}
+
+.xaxis, .yaxis {
+      stroke : black;
+      stroke-width: 1.2px;
+      fill:none;
+      shape-rendering: crispEdges;
+    }
+
+.line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.2px;
+    }
+#line1 {
+   stroke: red;
+}
+.text {
+     font-weight : bold;
+     font-family: 'Orbitron', sans-serif;
+     font-size: 20px;
+     text-align : center;
+}
+
+#tab3 #line1 {
+   stroke: red;
+}
+#tab3 #line2 {
+  stroke: green;
+}
+#tab3 #line3 {
+  stroke: violet;
+}
+#tab3 #line4 {
+   stroke: black;
+}
+#tab3 #line5 {
+  stroke: yellow;
+}
+#tab3 #line6 {
+  stroke: brown;
+}
+#tab3 #line7 {
+  stroke: blue;
+}
