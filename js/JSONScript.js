@@ -2,7 +2,7 @@ var fs = require('fs');
 var readLine = require('readline');
 
 /*********************************************************
- * Varirables and Objects 
+ * Varirables and Objects
  *********************************************************/
 
 /* General Vars */
@@ -36,7 +36,7 @@ var plotTwoObj = {
   indPerYear : []
 };
 
-function plotThreeOutput(continent, indPerYear) 
+function plotThreeOutput(continent, indPerYear)
 {
   this.continent = continent;   /*String */
   this.indPerYear = indPerYear; /* Array */
@@ -62,7 +62,7 @@ if (args.length != 4)
 }
 
 /*********************************************************/
-/* Reading/Opening input files */ 
+/* Reading/Opening input files */
 /*********************************************************/
 /* Try to read req */
 list = fs.readFileSync(args[3]).toString();
@@ -110,16 +110,22 @@ lines.on('line', function (line) {
 		 countryIndex = headers.indexOf("Country Name");
 		 indicatorIndex = headers.indexOf("Indicator Code");
 		 yearIndex = headers.indexOf(plotOneYear.toString());
- 
+
 	         count = count + 1;
                  headers.splice(1,3);
 	}
 
-        /* Chk for the PlotOne Contents */
+  /* Chk for the PlotOne Contents */
 	currentIndicator = line[indicatorIndex];
 	plotOneIndicatorIndex = plotOneParams.indexOf(currentIndicator);
-
-	if (plotOneIndicatorIndex != -1)
+        cont = "";
+        {
+          cname = line[countryIndex].toString() + ".";
+          mappingIndex = mapping.indexOf(cname)+1;
+          cont = mapping[mappingIndex];
+          console.log(cont);
+        }
+	if ((cont != "Others") && (plotOneIndicatorIndex != -1)) /*Chk only for Country not region */
 	{
 		 yearValue = line[yearIndex];
                  index = undefined;
@@ -132,7 +138,7 @@ lines.on('line', function (line) {
                      }
                  });
                  updatePlotOneInfo(index, line[countryIndex], yearValue, plotOneIndicatorIndex);
-	} 
+	}
 
 	/* Chk for the Country i.e. PlotTwo contents*/
 	if ((line[countryIndex] == plotTwo.countryName) && (line[indicatorIndex] == plotTwo.indicator))
@@ -156,7 +162,7 @@ lines.on('line', function (line) {
         {
             /* Remove the Unwanted fields */
             line.splice(1,3);
-            
+
             cname = line[countryIndex].toString() + ".";
             mappingIndex = mapping.indexOf(cname)+1;
             cont = mapping[mappingIndex];
@@ -169,7 +175,7 @@ lines.on('line', function (line) {
                     return;
                 }
             });
-           
+
             /* If continent info not present, append */
             if ( contIndex == undefined)
 	    {
@@ -184,7 +190,7 @@ lines.on('line', function (line) {
 		    plotThreeObj = new plotThreeOutput(cont,indPerYear);
                     plotThreeArray.push(plotThreeObj);
 	    }
-            else 
+            else
             {
                  plotThreeObj = contIndex;
                  i = 1;
@@ -243,9 +249,9 @@ var updatePlotOneInfo = function (index, countryName, indicatorValue, pos)
 		plotOneObj = Object.create(plotOneOutput);
 		plotOneObj.country = countryName;
                 plotOneArray.push(plotOneObj);
-	} 
+	}
 	else {
-		plotOneObj = index; 
+		plotOneObj = index;
 	}
 
 	if (pos == 0) {

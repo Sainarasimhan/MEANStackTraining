@@ -11,6 +11,7 @@
   </script>
   <script src="js/lib/bootstrap/bootstrap.min.js"></script>
   <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="js/script.js"></script>
 
   <!-- Style sheets Bootstrap -->
   <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
@@ -62,328 +63,36 @@
             <div class="tab-content">
               <div class="tab-pane active" id="itab1">
                 <script>
-                  (function() {
-                    /* Define Variables */
-                    var MaxWidth = 1200;
-                    var MaxHeight = 700;
-                    var xrange = 1100;
-                    var yrange = 510;
-                    var gxMin = 70;
-                    var gyMin = 50;
-                    var gyMax = 560;
 
-                    var svg = d3.select("#itab1").append("svg");
-                    svg.attr("width", MaxWidth);
-                    svg.attr("height", MaxHeight);
-
-                    var xscale = d3.scale.ordinal()
-                      .rangeBands([0, 900], .2);
-
-                    var yscale = d3.scale.linear()
-                      .rangeRound([yrange, 0]);
-
-                    var yscaleAxis = d3.scale.linear()
-                      .rangeRound([yrange, 10]);
-
-                    var colorscale = d3.scale.category10()
-                      .domain(["ind1", "ind2"])
-                      .range(5, 10);
-
-                    x1Axis = d3.svg.axis()
-                      .orient("bottom")
-                      .scale(xscale);
-
-                    y1Axis = d3.svg.axis()
-                      .orient("left")
-                      .ticks(15)
-                      .tickFormat(d3.format("s"))
-                      .scale(yscaleAxis);
-
-                    var text = svg.append("text")
-                      .attr("x", "20")
-                      .attr("class", "text")
-                      .attr("y", "30");
-
-                    var text1 = svg.append("text")
-                      .attr("x", "5")
-                      .attr("class", "text1")
-                      .attr("style", "writing-mode: tb")
-                      .attr("y", "230");
-
-                    var g = svg.append("g")
-                      .attr("class", "layer")
-                      .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-                    var g1 = svg.append("g")
-                      .attr("transform", "translate(" + gxMin + "," + gyMax + ")");
-
-                    var g2 = svg.append("g")
-                      .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-                    var leg1 = svg.append("text")
-                      .attr("transform", "translate(600,100)")
-                      .attr("class", "text2")
-                      .attr("fill", "blue")
-                      .attr("font-weight", "bold")
-                      .text("GDP (constant 2005 US $)");
-
-                    var leg1 = svg.append("text")
-                      .attr("transform", "translate(600,130)")
-                      .attr("class", "text3")
-                      .attr("fill", "steelblue")
-                      .attr("font-weight", "bold")
-                      .text("GNI (constant 2005 US $)");
-
-                    d3.json("JSON/plotOne.JSON", function(obj) {
-
-                      var bar1 = [];
-                      obj.forEach(function(d) {
-                        bar1.push({
-                          country: d.country,
-                          ind: "ind1",
-                          value: d.ind1
-                        }, {
-                          country: d.country,
-                          ind: "ind2",
-                          value: d.ind2
-                        });
-                      });
-
-                      //console.log("bar1", bar1);
-                      var nested = d3.nest()
-                        .key(function(d) {
-                          return d.ind;
-                        })
-                        .entries(bar1);
-
-                      var stack = d3.layout.stack()
-                        .y(function(d) {
-                          return parseFloat(d.value);
-                        })
-                        .values(function(d) {
-                          return d.values;
-                        });
-
-                      var layers = stack(nested);
-
-                      xscale.domain(obj.map(function(d) {
-                        return d.country;
-                      }));
-
-                      minMax = d3.extent(obj, function(d) {
-                        return (parseFloat(d.ind1) + parseFloat(d.ind2));
-                      });
-                      yscale.domain([0, minMax[1]]);
-                      yscaleAxis.domain([0, minMax[1]]);
-
-                      text.text("Top 15 Countries By GDP")
-                      text1.text("GDP+GNI(constant 2005 US$)");
-
-                      g1.attr("class", "xaxis")
-                        .call(x1Axis)
-                        .selectAll("text")
-                        .attr("dx", "-.8em")
-                        .attr("dy", "2em")
-                        .attr("transform", "rotate(-20)");
-
-                      g2.attr("class", "yaxis")
-                        .call(y1Axis);
-
-                      var layerGroups = g.selectAll(".layer").data(layers);
-                      layerGroups.enter().append("g")
-                        .attr("class", "layer");
-                      layerGroups.style("fill", function(d) {
-                        if (d.key == "ind1") {
-                          return "blue";
-                        } else if (d.key == "ind2") {
-                          return "steelblue";
-                        }
-                      });
-
-                      var bars = layerGroups.selectAll("rect").data(function(d) {
-                        return d.values;
-                      });
-                      bars.enter().append("rect")
-                      bars.exit().remove();
-                      bars
-                        .attr("x", function(d) {
-                          return xscale(d.country);
-                        })
-                        .attr("y", function(d) {
-                          return (yscale(parseFloat(d.y) + parseFloat(d.y0)));
-                        })
-                        .attr("height", function(d) {
-                          return (yrange - yscale(parseFloat(d.y)));
-                        })
-                        .attr("width", xscale.rangeBand())
-                        .attr("style", "stroke:none");
-
-                    });
-                  }());
+                (function(){
+                   objt = {
+                     "heading": "Top 15 Countries By GDP",
+                     "yLabel" :"GDP+GNI(constant 2005 US$)",
+                     "tab" : "#itab1",
+                     "JSONFile": "JSON/plotOne.JSON",
+                     "bars" : "first",
+                     "lgnd1": "GDP (constant 2005 US $)",
+                     "lgnd2": "GNI (constant 2005 US $)"
+                   };
+                  drawStackBars(objt);
+                })();
                 </script>
               </div> <!-- End of iTab1 -->
 
               <div class="tab-pane" id="itab2">
                 <script>
-                (function() {
-                  /* Define Variables */
-                  var MaxWidth = 1200;
-                  var MaxHeight = 700;
-                  var xrange = 1100;
-                  var yrange = 490;
-                  var gxMin = 70;
-                  var gyMin = 70;
-                  var gyMax = 560;
-
-                  var svg = d3.select("#itab2").append("svg");
-                  svg.attr("width", MaxWidth);
-                  svg.attr("height", MaxHeight);
-
-                  var xscale = d3.scale.ordinal()
-                    .rangeBands([0, 900], .2);
-
-                  var yscale = d3.scale.linear()
-                    .rangeRound([yrange, 0]);
-
-                  var yscaleAxis = d3.scale.linear()
-                    .rangeRound([yrange, 10]);
-
-                  var colorscale = d3.scale.category10()
-                    .domain(["ind1", "ind2"])
-                    .range(5, 10);
-
-                  x11Axis = d3.svg.axis()
-                    .orient("bottom")
-                    .scale(xscale);
-
-                  y11Axis = d3.svg.axis()
-                    .orient("left")
-                    .ticks(15)
-                    .tickFormat(d3.format("s"))
-                    .scale(yscaleAxis);
-
-                  var text = svg.append("text")
-                    .attr("x", "20")
-                    .attr("class", "text")
-                    .attr("y", "30");
-
-                  var text1 = svg.append("text")
-                    .attr("x", "5")
-                    .attr("class", "text1")
-                    .attr("style", "writing-mode: tb")
-                    .attr("y", "230");
-
-                  var g = svg.append("g")
-                    .attr("class", "layer")
-                    .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-                  var g1 = svg.append("g")
-                    .attr("transform", "translate(" + gxMin + "," + gyMax + ")");
-
-                  var g2 = svg.append("g")
-                    .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-                  var leg1 = svg.append("text")
-                    .attr("transform", "translate(600,100)")
-                    .attr("class", "text2")
-                    .attr("fill", "blue")
-                    .attr("font-weight", "bold")
-                    .text("GDP Per Capita(constant 2005 US $)");
-
-                  var leg1 = svg.append("text")
-                    .attr("transform", "translate(600,130)")
-                    .attr("class", "text3")
-                    .attr("fill", "steelblue")
-                    .attr("font-weight", "bold")
-                    .text("GNI Per Capita(constant 2005 US $)");
-
-                  d3.json("JSON/plotOne.JSON", function(obj) {
-
-                    var bar1 = [];
-                    obj.forEach(function(d) {
-                      bar1.push({
-                        country: d.country,
-                        ind: "ind1",
-                        value: d.ind3
-                      }, {
-                        country: d.country,
-                        ind: "ind2",
-                        value: d.ind4
-                      });
-                    });
-
-                    //console.log("bar1", bar1);
-                    var nested = d3.nest()
-                      .key(function(d) {
-                        return d.ind;
-                      })
-                      .entries(bar1);
-
-                    var stack = d3.layout.stack()
-                      .y(function(d) {
-                        return parseFloat(d.value);
-                      })
-                      .values(function(d) {
-                        return d.values;
-                      });
-
-                    var layers = stack(nested);
-
-                    xscale.domain(obj.map(function(d) {
-                      return d.country;
-                    }));
-
-                    minMax = d3.extent(obj, function(d) {
-                      return (parseFloat(d.ind3) + parseFloat(d.ind4));
-                    });
-                    yscale.domain([0, minMax[1]]);
-                    yscaleAxis.domain([0, minMax[1]]);
-
-                    text.text("Top 15 Countries By GDP")
-                    text1.text("GDP+GNI Per Capita(constant 2005 US$)");
-
-                    g1.attr("class", "xaxis")
-                      .call(x11Axis)
-                      .selectAll("text")
-                      .attr("dx", "-.8em")
-                      .attr("dy", "2em")
-                      .attr("transform", "rotate(-20)");
-
-                    g2.attr("class", "yaxis")
-                      .call(y11Axis);
-
-                    var layerGroups = g.selectAll(".layer").data(layers);
-                    layerGroups.enter().append("g")
-                      .attr("class", "layer");
-                    layerGroups.style("fill", function(d) {
-                      if (d.key == "ind1") {
-                        return "blue";
-                      } else if (d.key == "ind2") {
-                        return "steelblue";
-                      }
-                    });
-
-                    var bars = layerGroups.selectAll("rect").data(function(d) {
-                      return d.values;
-                    });
-                    bars.enter().append("rect")
-                    bars.exit().remove();
-                    bars
-                      .attr("x", function(d) {
-                        return xscale(d.country);
-                      })
-                      .attr("y", function(d) {
-                        return (yscale(parseFloat(d.y) + parseFloat(d.y0)));
-                      })
-                      .attr("height", function(d) {
-                        return (yrange - yscale(parseFloat(d.y)));
-                      })
-                      .attr("width", xscale.rangeBand())
-                      .attr("style", "stroke:none");
-
-                  });
-                }());
-
+                  (function(){
+                     objt = {
+                       "heading": "Top 15 Countries By GDP",
+                       "yLabel" :"GDP+GNI Per Capita(constant 2005 US$)",
+                       "tab" : "#itab2",
+                       "JSONFile": "JSON/plotOne.JSON",
+                       "bars" : "second",
+                       "lgnd1": "GDP Per Capita(constant 2005 US $)",
+                       "lgnd2": "GNI Per Capita(constant 2005 US $)"
+                     };
+                    drawStackBars(objt);
+                  })();
                 </script>
               </div>
               <!-- End of iTab2-->
@@ -396,90 +105,15 @@
 
         <div class="tab-pane" id="tab2">
           <script>
-            (function() {
-              /* Define Variables */
-              var MaxWidth = 900;
-              var MaxHeight = 600;
-              var xrange = 800;
-              var yrange = 500;
-              var gxMin = 50;
-              var gyMin = 60;
-              var gyMax = 560;
-
-              var svg = d3.select("#tab2").append("svg");
-              svg.attr("width", MaxWidth);
-              svg.attr("height", MaxHeight);
-
-              var xscale = d3.scale.linear()
-                .rangeRound([0, xrange]);
-
-              var yscale = d3.scale.linear()
-                .rangeRound([yrange, 0]);
-
-              x2Axis = d3.svg.axis()
-                .orient("bottom")
-                .scale(xscale);
-
-              y2Axis = d3.svg.axis()
-                .orient("left")
-                .ticks(15)
-                .tickFormat(d3.format("s"))
-                .scale(yscale);
-
-              var text = svg.append("text")
-                .attr("x", "20")
-                .attr("class", "text")
-                .attr("y", "30");
-
-              var text1 = svg.append("text")
-                .attr("x", "5")
-                .attr("class", "text1")
-                .attr("style", "writing-mode: tb")
-                .attr("y", "230");
-
-              var g = svg.append("g")
-                .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-              var g1 = svg.append("g")
-                .attr("transform", "translate(" + gxMin + "," + gyMax + ")");
-
-              var g2 = svg.append("g")
-                .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-              d3.json("JSON/plotTwo.JSON", function(obj) {
-                xscale.domain(d3.extent(obj.indPerYear, function(d) {
-                  return parseFloat(d.year)
-                }));
-                yscale.domain(d3.extent(obj.indPerYear, function(d) {
-                  return parseFloat(d.value)
-                }));
-
-                text.text("India's GDP Annual Growth")
-                text1.text("GDP Annaul Growth(constant 2005 $)");
-
-                g1.attr("class", "xaxis")
-                  .call(x2Axis);
-
-                g2.attr("class", "yaxis")
-                  .call(y2Axis);
-
-                fn_line(obj.indPerYear);
-              });
-
-              var line = d3.svg.line()
-                .x(function(d) {
-                  return xscale(d.year);
-                })
-                .y(function(d) {
-                  return yscale(d.value);
-                })
-
-              var fn_line = function(data) {
-                g.append("path").data(data)
-                  .attr("class", "line")
-                  .attr("d", line(data));
-              }
-            }());
+           (function(){
+             objt = {
+               "tab" : "#tab2",
+                "heading" : "India's GDP Annual Growth",
+                "yLabel" : "GDP Annaul Growth(constant 2005 $)",
+                "JSONFile" : "JSON/plotTwo.JSON"
+             };
+             drawLine(objt);
+           })();
           </script>
         </div>
         <!-- End of Tab-2 -->
@@ -487,124 +121,15 @@
         <div class="tab-pane" id="tab3">
           <div>
             <script>
-              (function() {
-                /* Define Variables */
-                var MaxWidth = 1050;
-                var MaxHeight = 650;
-                var xrange = 800;
-                var yrange = 500;
-                var gxMin = 70;
-                var gyMin = 60;
-                var gyMax = 560;
-
-                var svg = d3.select("#tab3").append("svg");
-                svg.attr("width", MaxWidth);
-                svg.attr("height", MaxHeight);
-
-                var xscale = d3.scale.linear()
-                  .rangeRound([0, xrange]);
-
-                var yscale = d3.scale.linear()
-                  .rangeRound([yrange, 0]);
-
-                x3Axis = d3.svg.axis()
-                  .orient("bottom")
-                  .scale(xscale);
-
-                y3Axis = d3.svg.axis()
-                  .orient("left")
-                  .ticks(15)
-                  .tickFormat(d3.format("s"))
-                  .scale(yscale);
-
-                var text = svg.append("text")
-                  .attr("x", "20")
-                  .attr("class", "text")
-                  .attr("y", "30");
-
-                var text1 = svg.append("text")
-                  .attr("x", "5")
-                  .attr("class", "text1")
-                  .attr("style", "writing-mode: tb")
-                  .attr("y", "230");
-
-                var g = svg.append("g")
-                  .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-                var g1 = svg.append("g")
-                  .attr("transform", "translate(" + gxMin + "," + gyMax + ")");
-
-                var g2 = svg.append("g")
-                  .attr("transform", "translate(" + gxMin + "," + gyMin + ")");
-
-                var ref = svg.append("g")
-                  .attr("transform", "translate(70,550)");
-
-                var lgndX = d3.scale.linear()
-                  .range([60, 700])
-                  .domain([1, 7]);
-
-                d3.json("JSON/plotThree.JSON", function(obj) {
-                  var minMaxX = [];
-                  var minMaxY = [];
-
-                  obj.forEach(function(o) {
-
-                    minMaxX.push(d3.extent(o.indPerYear, function(d) {
-                      return parseFloat(d.year)
-                    }));
-                    minMaxY.push(d3.extent(o.indPerYear, function(d) {
-                      return parseFloat(d.value)
-                    }));
-                  });
-
-                  minY = (d3.extent(minMaxY, function(d) {
-                    return (d[0])
-                  }))[0];
-                  maxY = (d3.extent(minMaxY, function(d) {
-                    return (d[1])
-                  }))[1];
-
-                  xscale.domain(minMaxX[0]);
-                  yscale.domain([minY, maxY]);
-
-                  text.text("Continents GDP Per Capita Growth")
-                  text1.text("GDP Per Capita (constant 2005 US$)");
-
-                  g1.attr("class", "xaxis")
-                    .call(x3Axis);
-
-                  g2.attr("class", "yaxis")
-                    .call(y3Axis);
-
-                  var count = 0;
-                  obj.forEach(function(o) {
-                    count = count + 1;
-                    fn_line(o.indPerYear, "line" + count);
-
-                    ref.append("text")
-                      .attr("x", lgndX(count))
-                      .attr("y", 80)
-                      .attr("id", "line" + count)
-                      .text(o.continent);
-                  });
-                });
-
-                var line = d3.svg.line()
-                  .x(function(d) {
-                    return xscale(d.year);
-                  })
-                  .y(function(d) {
-                    return yscale(d.value);
-                  })
-
-                var fn_line = function(data, id) {
-                  g.append("path").data(data)
-                    .attr("class", "line")
-                    .attr("id", id)
-                    .attr("d", line(data));
-                }
-              }());
+            (function(){
+              objt = {
+                "heading": "Continents GDP Per Capita Growth",
+                "yLabel" : "GDP Per Capita (constant 2005 US$)",
+                "tab" : "#tab3",
+                "JSONFile" : "JSON/plotThree.JSON"
+              };
+              drawLine(objt);
+            })();
             </script>
           </div>
 
