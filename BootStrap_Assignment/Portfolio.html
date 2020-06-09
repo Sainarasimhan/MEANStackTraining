@@ -1,0 +1,561 @@
+<!doctype html5>
+<html>
+<head>
+
+  <title> Fiat Portfolio | BootStrap</title>
+
+  <!-- Scripts -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
+  <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Style sheets Bootstrap -->
+  <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/lib/bootstrap/bootstrap-theme.min.css">
+  <!-- Custom Style Sheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type='text/css'>
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+
+  <!-- Meta -->
+  <meta name="viewport" content="width=device-width">
+
+</head>
+
+<body>
+  <div id="contents" class="container"> <!-- Main Content with Container -->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div id="nav_content" class="container">
+
+        <div class = "navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsable-1">
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+          </button>
+         <img class="navbar-brand" src="images/fiat_logo.jpg" alt="Fiat Logo">
+
+
+        </div> <!-- End of Navbar-header -->
+
+
+        <div class="collapse navbar-collapse" id = "navbar-collapsable-1">
+          <ul class="nav navbar-nav">
+
+            <li class="active"><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Services <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li> <a href="Portfolio.html">Portfolio </a></li>
+                <li> <a href="#">Features  </a> </li>
+                <li class="divider"> </li>
+                <li class="dropdown-header">More..</li>
+                <li> <a href="#">Service</a> </li>
+                <li><a href="#">Locate Us</a></li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <form class="navbar-form navbar-left">
+            <input type="text" class="form-control" placeholder="Search This Site ..">
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </form>
+
+
+          <div id="My_Account" class="nav navbar-nav navbar-right">
+            <div class="dropdown">
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <span class="glyphicon glyphicon-user"></span> User Preferences <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#"> <span class="glyphicon glyphicon-wrench"></span>  Settings</a>
+                </li>
+                <li><a href="#"><span class = "glyphicon glyphicon-file"></span>  Profile</a></li>
+                <li><a href="#"><span class = "glyphicon glyphicon-king"></span>  Theme</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><span class = "glyphicon glyphicon-log-out"></span>  Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class ="row callout" id="callout_portfolio"> <!-- Callout for Portfolio -->
+       <div class="col-12">
+          <div class="alert alert-success" id="bookDriveAlert">
+            <div type="button" class="close" data-dismiss="alert">
+               <span>&times</span>
+            </div>
+            <p> <strong> Success !! </strong> You have booked for a Test Drive </p>
+          </div> <!-- End of Alert -->
+
+          <div class="well well-small visible-sm">
+            <a href="#" class="btn btn-large btn-block btn-default"><span class="glyphicon glyphicon-phone">Give Us a Call !!</span></a>
+          </div> <!-- End of Small well -->
+
+          <div class="well">
+            <div class="page-header">
+               <h1> Fiat India <small>Crafted for Car Lovers</small></h1>
+               <span class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis vel itaque laudantium consequuntur fugit voluptate aspernatur cumque repellat mollitia dolores unde, maxime enim praesentium vero optio, ad magnam reiciendis harum.</span>
+            </div>
+
+          </div> <!-- End of Well -->
+       </div> <!-- End of col -->
+    </div> <!-- End of callout -->
+
+    <hr> <!-- Horizontal Break -->
+
+    <div class = "row" id = "products">  <!-- Main Product Section -->
+
+      <h3> <strong> Fiat Portfolio </strong> </h3>
+      <div class = "tabbable">
+         <div class = "col-sm-3">
+          <ul class ="nav nav-pills nav-stacked">
+            <li><a href="#car1" data-toggle="tab">Punto</a></li>
+            <li class="active"><a href="#car2" data-toggle="tab">Aventurra</a></li>
+            <li><a href="#car3" data-toggle="tab">Linea</a></li>
+          </ul>
+        </div>
+
+        <div class = "tab-content">
+          <div class ="tab-pane" id="car1"> <!-- Tab for Car 1-->
+              <div class = "col-sm-3">
+                <div class = "panel panel-success">
+                   <div class="panel-heading">
+                     <h3 class = "panel-title"> Punto </h3>
+                   </div> <!-- End of panel-heading -->
+                   <img src="images/car1.jpg" alt="car1">
+                </div>
+              </div>
+
+              <div class = "col-sm-3">
+                <div class = "panel panel-success">
+                   <div class="panel-heading">
+                     <h3 class = "panel-title"> Punto Evo</h3>
+                   </div> <!-- End of panel-heading -->
+                   <img src="images/car2.png" alt="car2">
+                </div>
+              </div>
+
+              <div class = "col-sm-3">
+                <div class = "panel panel-success">
+                   <div class="panel-heading">
+                     <h3 class = "panel-title"> Punto Abrath</h3>
+                   </div> <!-- End of panel-heading -->
+                   <img src="images/car3.jpg" alt="car3">
+                </div>
+              </div> <!-- End of Col-sm-4 -->
+
+              <div class = "col-sm-3">
+                <!-- Space -->
+              </div>
+
+              <div class = "col-sm-3">
+                <div class = "panel panel-success">
+                   <div class="panel-heading">
+                     <h3 class = "panel-title"> Punto XX </h3>
+                   </div> <!-- End of panel-heading -->
+                   <img src="images/car8.jpg" alt="car4">
+                </div>
+              </div>
+
+              <div class = "col-sm-3">
+                <div class = "panel panel-success">
+                   <div class="panel-heading">
+                     <h3 class = "panel-title"> Punto New</h3>
+                   </div> <!-- End of panel-heading -->
+                   <img src="images/car5.jpg" alt="car5">
+                </div>
+              </div>
+
+              <div class = "col-sm-3">
+                <div class = "panel panel-success">
+                   <div class="panel-heading">
+                     <h3 class = "panel-title"> Punto Urban</h3>
+                   </div> <!-- End of panel-heading -->
+                   <img src="images/car9.jpg" alt="car6">
+                </div>
+              </div> <!-- End of Col-sm-4 -->
+
+          </div> <!-- End of Car1 -->
+
+           <div class ="tab-pane active" id="car2"> <!-- Tab for car 2 -->
+               <div class = "col-sm-3">
+                 <div class = "panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title"> Avenntura</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car3.jpg" alt="car4">
+                 </div>
+               </div>
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title"> Avenntura Evo</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car5.jpg" alt="car5">
+                 </div>
+
+               </div>
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title"> Avenntura Abrath</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car1.jpg" alt="car6">
+                 </div>
+               </div>
+
+               <div class = "col-sm-3">
+                 <!-- Space -->
+               </div>
+               <div class = "col-sm-3">
+                 <div class = "panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title"> Avenntura New </h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car8.jpg" alt="car7">
+                 </div>
+               </div>
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title"> Avenntura XX</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car3.jpg" alt="car8">
+                 </div>
+
+               </div>
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title"> Avenntura Urban</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car6.jpg" alt="car9">
+                 </div>
+               </div>
+
+           </div> <!-- End of Car2 -->
+
+           <div class ="tab-pane" id="car3"> <!-- Tab for Car-3 -->
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-danger">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title">Linea</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car7.png" alt="car7">
+                 </div>
+               </div>
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-danger">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title">Linea New</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car8.jpg" alt="car8">
+                 </div>
+               </div>
+
+               <div class = "col-sm-3">
+                 <div class = "panel panel-danger">
+                    <div class="panel-heading">
+                      <h3 class = "panel-title">Linea Classic</h3>
+                    </div> <!-- End of panel-heading -->
+                    <img src="images/car9.jpg" alt="car9">
+                 </div>
+               </div>
+
+                <div class="col-sm-3">
+                  <!-- Space -->
+                </div>
+
+                <div class = "col-sm-3">
+                  <div class = "panel panel-danger">
+                     <div class="panel-heading">
+                       <h3 class = "panel-title">Linea XX</h3>
+                     </div> <!-- End of panel-heading -->
+                     <img src="images/car2.png" alt="car7">
+                  </div>
+                </div>
+
+                <div class = "col-sm-3">
+                  <div class = "panel panel-danger">
+                     <div class="panel-heading">
+                       <h3 class = "panel-title">Linea Urban</h3>
+                     </div> <!-- End of panel-heading -->
+                     <img src="images/car6.jpg" alt="car8">
+                  </div>
+                </div>
+
+                <div class = "col-sm-3">
+                  <div class = "panel panel-danger">
+                     <div class="panel-heading">
+                       <h3 class = "panel-title">Linea Classic</h3>
+                     </div> <!-- End of panel-heading -->
+                     <img src="images/car1.jpg" alt="car9">
+                  </div>
+                </div>
+
+           </div> <!-- End of Car3 -->
+        </div> <!-- End of Tab-content -->
+      </div> <!-- End of Tabbale -->
+    </div> <!-- End of Products -->
+
+    <hr> <!-- Horizontal Break -->
+
+     <div id = "PriceInfo" class= "row"> <!-- Price Info section -->
+       <div class = "well">
+         <h3 >Price Information of Cars</h3>
+         <span class ="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates sapiente totam magni doloribus.. </span>
+         <h4> <a href="#myModal" class = "btn btn-warning" data-toggle="modal"> <span class="glyphicon glyphicon-euro"></span> Get Price Details !</a> </h4>
+       </div> <!-- End of Well -->
+
+       <div class="modal fade" id = "myModal"> <!-- Modal to Get Price -->
+         <div class = "modal-dialog">
+           <div class= "modal-content">
+             <div class= "modal-header">
+               <div class = "modal-title">
+                  <h3> Get Price Details !!
+                  <div type="button" data-dismiss="modal" class="close">&times</a>
+                </h3>
+               </div>
+             </div> <!-- End of modal-header -->
+
+             <div class = "modal-body">
+                <form class = "form-horizontal">
+                  <div class = "form-group">
+                      <label for="NameInput" class="col-sm-3">Your Name</label>
+                      <div class = "col-sm-9">
+                      <input type="text" id="NameInput" class="form-control" placeholder="Enter Your Name">
+                    </div>
+                  </div>
+
+                  <div class = "form-group">
+                      <label for="EmailInput" class="col-sm-3">Your Email</label>
+                      <div class = "col-sm-9">
+                      <input type="email" id="EmailInput" class="form-control" placeholder="Email">
+                    </div>
+                  </div>
+
+                  <div class = "form-group">
+                      <label for="MobileInput" class="col-sm-3">Contact Number</label>
+                      <div class = "col-sm-9">
+                      <input type="phone" id="MobileInput" class="form-control" placeholder="Contact Number">
+                    </div>
+                  </div>
+
+
+                  <button class="btn btn-primary pull-right" type="submit">Submit !!</button>
+                </form>
+
+             </div> <!-- End of modal-body -->
+
+           <div class= "modal-footer">
+             <button class = "btn btn-info" type="button">Save Details</button>
+             <button class = "btn btn-default" type="button" data-dismiss="modal">Close</button>
+             </div> <!-- End of modal-content -->
+           </div> <!-- End of modal-footer -->
+         </div> <!-- End of Modal dialog -->
+       </div> <!-- End of modal -->
+     </div> <!-- End of Price Info -->
+
+    <hr> <!-- Horizontal Break -->
+
+    <div id="thumbnails"> <!-- Thumbnail info -->
+      <div class ="row">
+        <h3 class = "lead"> Fiat Offers for You !! </h3>
+
+        <div class = "col-sm-1">
+          <!-- Just Space -->
+        </div>
+
+        <div class = "thumbnail col-sm-4">
+            <img src="images/Offer1.jpg" alt="Offer1">
+        <div class = "caption">
+           <h3> Punto Offers for the month </h3>
+           <h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime porro, laudantium necessitatibus amet! Et eaque exercitationem culpa sed repudiandae doloribus </h4>
+
+           <a href="#" class = "btn btn-primary btn-small">Book Now</a>
+           <a href="#" class = "btn btn-small btn-link">Get More Details</a>
+        </div> <!-- End of Caption -->
+
+      </div> <!-- End of col-sm-4 -->
+      <div class = "col-sm-2">
+        <!-- Just Space -->
+      </div>
+
+      <div class = "thumbnail col-sm-4">
+          <img src="images/Offer3.jpg" alt="Offer3">
+      <div class = "caption">
+         <h3> Abrath Offers for the month </h3>
+         <h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime porro, laudantium necessitatibus amet! Et eaque exercitationem culpa sed repudiandae doloribus </h4>
+
+         <a href="#" class = "btn btn-primary btn-small">Book Now</a>
+         <a href="#" class = "btn btn-small btn-link">Get More Details</a>
+      </div> <!-- End of Caption -->
+      </div> <!-- End of col-sm-4 -->
+
+       <div class="col-sm-1">
+         <!-- Space -->
+       </div>
+
+      </div> <!-- End of Row -->
+    </div> <!-- End of Thumbnails -->
+  </div>
+</body>
+
+  <hr> <!-- Horizontal Break -->
+
+  <footer> <!-- Footer Section -->
+    <div class="container">
+      <div class = "row">
+        <div class="col-sm-2" id="icon">
+          <img src="images/fiat_logo.jpg" alt="Fiat Logo">
+        </div> <!-- End of Icon -->
+
+        <div class = "col-sm-4">
+          <span id="h2"> Copyrights information </span> <br> <br>
+          <span class="lead">
+            © 2016 FCA India Automobiles Private Limited ("FCAIAPL") .
+            FCA India Automobiles Private Limited ("FCAIAPL") reserves the right to change without notice the colours, equipment specifications and models. Accessories shown in the pictures and features mentioned may not be a part of the standard equipment and could differ with variants. Actual colour of vehicle and upholstery might differ.
+            *Ex-showroom price excludes road taxes, registration fees & insurance. Starting at price refers to the base model, optional equipment not included.
+            A more expensive model may be shown. Pricing and offers may change at any time without notification. To get full pricing details, contact your nearest dealer.
+            *Offers applicable only on selected cities and selected models.
+          </span>
+        </div> <!-- End of col-sm-4 -->
+
+        <div class = "col-sm-2">
+
+          <!-- Site details -->
+          <div id="site" >
+            <span id = "h2">
+               Fiat India
+            </span>
+            <br> <br>
+            <span id = "Description">
+               THE ONLINE HUB FOR ALL FIAT INDIA AMAZINGNESS.
+            </span>
+
+            <!-- Address -->
+            <span id = "address" >
+              <strong> Headqurters: </strong> <br>
+              Fiat Automation Industry, <br>
+              Turin, <br>
+              Italy 32546;
+              <br><br>
+              <ul>
+                <li><a href="#">Phone </a>(023-3411-2351-12)</li>
+                <li><a href="#">Fax   </a>023-3411-2351-10</li>
+                <li><a href="#">Email </a>fiat.support@fiat.com</li>
+              </ul>
+            </span>
+          </div>
+
+        </div> <!-- End of col-sm-2 -->
+
+        <div class="col-sm-2">
+          <!-- Vehicles list -->
+          <div id = "vehicles">
+            <span id ="h2"> Fiat Vehicles </span> <br> <br>
+            <span id ="list">
+              <ul>
+                <li><a href="#">Punto</a></li>
+                <li><a href="#">Punto Cross</a></li>
+                <li><a href="#">Linea</a></li>
+                <li><a href="#">Aventurra</a></li>
+                <li><a href="#">Abrath</a></li>
+                <li><a href="#">Punto Abrath</a></li>
+              </ul>
+            </span>
+          </div>
+        </div> <!-- End of col-sm-2 -->
+
+        <div class="col-sm-2">
+            <!-- Location Details-->
+            <div id="locate" >
+              <span id ="h2">  Locate Us </span> <br> <br>
+              <span id ="list">
+                <ul>
+                  <li><a href="#">Corporate</a></li>
+                  <li><a href="#">Sales</a></li>
+                  <li><a href="#">Service</a></li>
+                  <li><a href="#">Queries</a></li>
+                  <li><a href="#">Test Drive</a></li>
+                  <li><a href="#">Complaints</a></li>
+                </ul>
+              </span>
+            </div> <!-- End of Locate -->
+        </div> <!-- End of col-sm-2 -->
+      </div> <!-- End of row -->
+       <br>
+       <div class="row" id="social-links">
+         <!-- Social Networking icons -->
+         <span id="social" >
+           <ul>
+             <li>
+               <a href="#" >
+                <i class="fa fa-facebook"></i>
+              </a>
+             </li>
+             <li>
+               <a href="#" >
+                 <i class="fa fa-twitter"></i>
+               </a>
+             </li>
+             <li>
+               <a href="#" >
+                 <i class="fa fa-google"></i>
+               </a>
+             </li>
+             <li>
+               <a href="#" >
+                 <i class="fa fa-pinterest"></i>
+               </a>
+             </li>
+             <li>
+               <a href="#">
+                 <i class="fa fa-vimeo"></i>
+               </a>
+             </li>
+             <li>
+               <a href="#" >
+                 <i class="fa fa-github"></i>
+               </a>
+             </li>
+             <li>
+               <a href="#" >
+                 <i class="fa fa-yahoo"></i>
+               </a>
+             </li>
+             <li>
+               <a href="#" >
+                 <i class="fa fa-linkedin"></i>
+               </a>
+             </li>
+           </ul>
+         </span>
+       </div> <!-- End of social-links -->
+    </div> <!-- End of Container -->
+
+  </footer> <!-- End of Footer Section -->
+  <hr>
+</html>

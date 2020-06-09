@@ -1,0 +1,346 @@
+/* Format for Body */
+body {
+  text-rendering: optimizeLegibility;
+}
+
+/**************************************8
+* Nav Bar style
+*/
+
+#nav_content img {
+  width: 70px;
+  height: 50px;
+  text-align: center;
+}
+
+#nav_content #My_Account {
+  padding-right: 20px;
+  margin-top: 15px;
+}
+
+#nav_content #My_Account a{
+  text-decoration:  none;
+}
+
+/* ************************************************************** */
+/* Carousel style
+************************* */
+#carousel_element {
+  margin-top: 60px;
+}
+
+#carousel_element .item {
+  height: 500px;
+}
+
+#slide1 {
+background: url("../images/carousel_first_large.jpg") top center no-repeat;
+}
+
+#slide2 {
+background: url("../images/carousel_second_large.jpg") top center no-repeat;
+}
+
+#slide3 {
+background: url("../images/carousel_third_large.jpg") top center no-repeat;
+}
+
+.item h3 {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;;
+}
+
+.item p {
+  font-size: 12px;
+  color: black;
+  font-weight: bolder;
+  font-family: 'Poiret One', sans-serif;;
+}
+
+/******************************************8
+* callout section styling */
+
+.callout .well .page-header {
+  margin-top: 0px;
+}
+.callout h1, #Features-Header h1,#Specifications h3 {
+  font-size: 25px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.callout h1 small {
+  font-size: 20px;
+  font-family: 'Pacifico', sans-serif;
+  color: #DA1D1D;
+}
+
+.callout .lead, #Features-Header .lead {
+  font-size: 15px;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bolder;
+}
+
+.callout .alert {
+  display: none;
+}
+
+#callout_portfolio {
+  margin-top: 70px;
+}
+
+/****************************************************88
+* Feature Section Styling
+*/
+#Features img {
+  height : 200px;
+  width: 280px;
+}
+
+#Features {
+  text-align: center;
+}
+
+#Features img, #Features .lead, #Features .btn{
+  margin: 10px 0px;
+}
+#Features .lead {
+  font-family: 'Pacifico', sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+  margin-left: 20px;
+}
+
+/******************************************************
+* Specifications section styling
+*/
+
+#Specifications .tab-content {
+  margin-top: 20px;
+}
+
+#Specifications .lead {
+  font-size: 15px;
+  font-family: 'Pacifico', sans-serif;
+  font-weight: lighter;
+}
+
+#tab3 {
+  text-align :center;
+}
+
+/******************************************************
+* Thumbnails Section Styling
+*/
+
+#thumbnails .lead {
+  font-size: 25px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: left;
+}
+
+#thumbnails {
+  text-align: center;
+  }
+
+#thumbnails img {
+  width :300px;
+  height: 200px;
+}
+
+#thumbnails h3 {
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bolder;
+}
+
+#thumbnails h4 {
+  font-family: 'Pacifico', sans-serif;
+  font-weight: lighter;
+  font-size: 10px;
+}
+
+
+/******************************************************
+* Footer Section Styling
+*/
+
+footer {
+  background: #333;
+  color: #eee;
+  font-size: 12px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .lead {
+  font-size: 10px;
+}
+
+footer #social-links {
+  text-align : center;
+}
+
+footer #social-links ul li {
+  display : inline;
+  padding-right: 40px;
+  font-size: 15px;
+}
+
+footer #icon {
+  margin-top: 10px;
+}
+
+footer #h2 {
+  font-size : 15px;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
+/*********************************************
+Style for Portfolio page ********************/
+
+#products h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+#products .tab-pane h3 {
+  text-align : center;
+  font-size: 15px;
+  padding: 5px 0px;
+}
+
+#products img {
+  width: 250px;
+  height: 160px;
+}
+
+.modal .modal-body {
+  margin-bottom: 30px;
+}
+
+#PriceInfo h3 {
+  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#PriceInfo .lead {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+#PriceInfo .well, #callout_portfolio .well {
+  padding: 5px;
+}
+
+/* ************************************************************** */
+/* Media Queries */
+
+/* For Screen Size less than 400px wide */
+@media screen and (max-width: 400px) {
+  #carousel_element {
+    margin-top: 80px;
+  }
+
+  #carousel_element .item {
+    height: 140px;
+  }
+
+  #slide1 {
+      background: url("../images/carousel_first_small.jpg") top center no-repeat;
+    }
+
+  #slide2 {
+    background: url("../images/carousel_second_small.jpg") top center no-repeat;
+  }
+  #slide3 {
+  background: url("../images/carousel_third_small.jpg") top center no-repeat;
+  }
+
+  .item h3, p {
+    visibility: hidden;
+  }
+
+  h1, h2  {
+    font-size: 15px;
+  }
+
+  #Specifications #tab1 img, #tab2 img, #tab3 img, #tab4 iframe {
+    width: 250px;
+    height: 150px;
+  }
+
+  #Features img {
+    width: 220px;
+    height: 150px;
+  }
+
+}
+/* ***********************************************************
+/* ***********************************************************
+* For Screen Size 400px-700px wide
+*/
+@media screen and (max-width: 700px) and (min-width: 400px) {
+  #carousel_element {
+    margin-top: 80px;
+  }
+
+  #carousel_element .item {
+    height: 370px;
+  }
+
+  #slide1 {
+      background: url("../images/carousel_first_medium.jpg") top center no-repeat;
+    }
+
+  #slide2 {
+    background: url("../images/carousel_second_medium.jpg") top center no-repeat;
+  }
+
+  #slide3 {
+  background: url("../images/carousel_third_medium.jpg") top center no-repeat;
+  }
+
+  #callout h1, #PriceInfo h3 {
+    font-size: 15px;
+  }
+
+  #Specifications #tab1 img, #tab2 img, #tab3 img, #tab4 iframe {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+/* ***********************************************************
+/* ***********************************************************
+* For Screen Size 700px-1000px wide
+*/
+
+@media screen and (max-width: 1200px) and (min-width: 700px) {
+
+  #callout h1, #PriceInfo h3 {
+    font-size: 15px;
+  }
+
+  #Specifications #tab1 img, #tab2 img, #tab4 iframe {
+    width: 300px;
+    height: 150px;
+  }
+
+  #Specifications #tab3 img, #Features img {
+    width: 200px;
+    height: 150px;
+  }
+
+  #products img {
+    width: 175px;
+    height: 150px;
+  }
+}
+
+/*******************************************************
+*** ENd of Style Sheet ********************************/

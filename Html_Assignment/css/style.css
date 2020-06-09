@@ -1,0 +1,358 @@
+/* Make the list inline */
+.head ul li {
+  display: inline;
+  padding-left: 25px;
+}
+
+/* Header section link's format */
+.head a {
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  color: #030303;
+  font-size: 12px!important;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  height: 8px;
+  display: inline-block;
+}
+
+/* Add effects for hover */
+.head nav a:hover, .foot #vehicles #list a:hover, #Product_Variants #options ul li a {
+  text-shadow: 1px 1px 1px #888;
+}
+
+.head .icon ul li:after {
+  padding-right: 5px;
+  font-weight: bolder;
+}
+
+.head .icon a:hover{
+   color: green;
+}
+
+.head nav {
+  text-align: center;
+  border-right: 1px #EEE;
+  border-left: 1px #EEE;
+  border-style: dotted;
+}
+
+.head {
+  line-height: 130px;
+}
+
+/* Products bar format */
+.products {
+  background-color: #C0D0CD;
+  height: 120px;
+}
+
+.products h2 {
+  padding-top: 20px;
+  font-size: 30px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.products h5 {
+  text-align: right;
+}
+.products h5 li {
+  display: inline;
+}
+.products h5 li:after {
+  content: '|';
+  font-size: 20px;
+  padding: 0px 5px;
+}
+.products h5 li:last-child:after {
+  content: none;
+  padding-right: 0;
+}
+.products h5 ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Poiret One', sans-serif;
+}
+.products h5 ul li a:hover {
+  color: #555;
+}
+.products h3 {
+  font-weight: lighter;
+  font-size: 18px;
+  color: #D01F1F;
+  display: block;
+  font-style: italic;
+  font-family: pacifico, sans-serif;
+}
+
+/* Format Content section */
+.content {
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* format for content section headers */
+.content h3 {
+  font-size: 20px;
+  color: #777;
+  font-weight: bold;
+  font-family: 'Poiret One', sans-serif;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
+.content h4 {
+  font-size: 15px;
+  color: rgba(62, 30, 224, 0.69);
+  font-weight: bold;
+  font-family: 'Poiret One', sans-serif;
+  letter-spacing: 0px;
+  padding: 5px 0px;
+  text-align: center;
+}
+.content h5 {
+  padding-top: 5px;
+  font-size: 13px;
+  font-weight: lighter;
+  ;
+  font-family: 'pacifico', sans-serif;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+/* Format Hero section */
+#hero {
+  padding: 50px 0px;
+}
+#hero h3 {
+  font-size: 50px;
+  color: rgba(60, 123, 169, 0.87);
+  display: block;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: -1px;
+  padding-bottom: 5px;
+  background: #E4EFEC;
+  font-family: 'Poiret One', sans-serif;
+  text-transform: capitalize;
+}
+
+/* Format Performance, Interiors Section */
+#Performance, #Interiors {
+  padding-bottom: 50px;
+}
+#Performance #h3, #Interiors #h3 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 25px;
+  color: red;
+  display: block;
+  font-weight: bolder;
+  padding-bottom: 10px;
+}
+#Performance #h4, #Interiors #h4 {
+  font-family: 'pacifico', sans-serif;
+  font-size: 15px;
+  color: grey;
+  padding-bottom: 30px;
+  display: block;
+}
+#Performance #h5, #Interiors #h5 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+#Performance #h5 a, #Interiors #h5 a {
+  text-decoration: none;
+  color: grey;
+}
+
+/* Format Help Section */
+#help {
+  padding-bottom: 50px;
+}
+#help #h2 {
+  font-family: "Poiret One", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #1ABC9C;
+  color: white;
+  font-weight: normal;
+}
+#help a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+/* Style for Footer Section */
+.foot {
+  text-align: center;
+  background: #B7B0B0;
+  max-width: 940px;
+  margin: auto;
+}
+.foot #site, .foot #vehicles, .foot #locate {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  max-width: 300px;
+  margin: auto;
+}
+.foot #site #h1, .foot #vehicles #h2, .foot #locate #h2 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  text-shadow: 1px 1px 1px black;
+  display: block;
+  text-transform: uppercase;
+}
+.foot #site #Description p {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.foot #site #address p {
+  text-align: left;
+  margin-left: 44px;
+  font-weight: normal;
+  font-family: 'Pacifico', sans-serif;
+  font-size: 14px;
+}
+.foot #site #address ul {
+  padding-top: 10px;
+  text-align: left;
+  margin-left: 44px;
+}
+.foot #site #address ul li a:after {
+  content: " : ";
+}
+.foot #site #address ul li a {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+}
+.foot #vehicles #list ul, .foot #locate #list ul {
+  text-align: left;
+  margin-left: 85px;
+  padding-top: 20px;
+}
+.foot #locate #list ul {
+  margin-left: 100px;
+}
+.foot #vehicles #list ul li, .foot #locate #list ul li {
+  line-height: 30px;
+}
+.foot #vehicles #list a, .foot #locate #list a {
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Orbitron', sans-serif;
+  color: black;
+  font-weight: bold;
+}
+.foot #locate #list a {
+  font-family: 'Pacifico', sans-serif;
+  font-weight: normal;
+}
+.foot #last_column {
+  background: blue;
+  padding-top: 20px;
+}
+
+/* Format copyrights and social icons section */
+#last {
+  margin-left: 10px;
+  max-width: 940px;
+  padding-top: 5px;
+  background: grey;
+  padding-bottom: 5px;
+}
+#last #copy {
+  font-size: 10px;
+  font-weight: lighter;
+}
+#last #social {
+  padding-top: 10px;
+  text-align: center;
+}
+#last #social ul li {
+  display: inline;
+  letter-spacing: 10px;
+  margin-left: 0px;
+}
+#last #social ul li a {
+  text-decoration: none;
+  color: blue;
+}
+
+/* Second Page Portfolio.html */
+/* Use same format for header and footer section */
+
+/* Format for products bar */
+#Product_Variants {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #B3234A;
+}
+#Product_Variants #h2 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+#Product_Variants #h2 a {
+  text-decoration: none;
+  color: black;
+}
+#Product_Variants #options {
+  text-align: right;
+}
+#Product_Variants #options ul li {
+  display: inline;
+  font-family: 'Poiret One', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding-right: 20px;
+}
+#Product_Variants #options ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Format on how rows should appear */
+.rows {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.rows h2 {
+  font-size: 20px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+}
+.rows h3 {
+  font-size: 15px;
+  font-family: 'Pacifico', sans-serif;
+  font-weight: normal;
+  color: grey;
+  text-align: center;
+}
+.rows #FirstRow, #SecondRow, #ThirdRow {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+/* Default formating for images */
+.rows img {
+  height: 150px;
+}
